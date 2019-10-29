@@ -1,12 +1,16 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#/">Full Stack Message Board</a>
+      <a id="main_title" class="navbar-brand" href="#/">Community Message Board</a>
     </nav>
-    <router-view/>
+    <router-view class="container"/>
   </div>
 </template>
 
-<style>
-
+<style scoped>
+#main_title{
+  font-size: 6vw;
+  font-family: cursive;
+  color: mediumseagreen;
+}
 </style>

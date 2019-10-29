@@ -25,6 +25,20 @@ app.get('/messages', (req,res) =>{
     })
 })
 
+app.post('/messages', (req,res) =>{
+
+    console.log(req.body);
+
+    messages.create(req.body).then((message)=>{
+
+        res.json(message);
+    }).catch((error) =>{
+        res.status(500);
+        res.json(error);
+
+    })
+})
+
 const port = process.env.PORT || 1234;
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}`);
