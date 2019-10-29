@@ -46,12 +46,13 @@
     <div class="list-unstyled" v-for="message in reverseMessages" :key="message._id">
       <li class="media">
         <img v-if="message.imageURL" class="mr-3" :src="message.imageURL" :alt="message.subject">
+        <img v-else class="mr-3" src="../assets/unknown_image.png" :alt="message.subject">
         <div class="media-body">
           <h4 class="mt-0 mb-1">{{message.username}}</h4>
-          <h5 class="mt-0 mb-1">{{message.subject}}</h5>
-          {{message.message}}
+          <h5 class="mt-0 mb-1">Subject: {{message.subject}}</h5>
+          <h6 class="messages"> Message: {{message.message}}</h6>
           <br />
-          <small>{{message.created}}</small>
+          <small class="created_info">Created: {{message.created}}</small>
           <hr>
         </div>
       </li>
@@ -116,7 +117,13 @@ hr {
   border-top: 1px solid white;
 }
 img {
-  max-width: 13vw;
+  width: 16vw;
   height: auto;
+}
+.messages{
+  color: #67ea67;
+}
+.created_info{
+  color: #ca9191;
 }
 </style>

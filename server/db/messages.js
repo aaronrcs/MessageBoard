@@ -5,7 +5,7 @@ const schema = Joi.object().keys({
     username: Joi.string().alphanum().required(),
     subject: Joi.string().required(),
     message: Joi.string().max(500).required(),
-    imageURL: Joi.string().uri({
+    imageURL: Joi.string().allow('').optional().uri({
         scheme:[
             /https?/
         ]
@@ -24,6 +24,10 @@ function create(message){
     if(!message.username){
         message.username = 'Anonymous'
     }
+
+    // if (!message.imageURL) {
+    //     message.imageURL = './assets/unknown_image.png';
+    // }
     const result = Joi.validate(message, schema);
 
     if(result.error == null){
