@@ -62,7 +62,8 @@
 
 <script>
 
-const API_URL = 'http://localhost:1234/messages';
+const API_URL = 'https://community-message-board.herokuapp.com/messages';
+// const API_URL = 'http://localhost:1234/messages';
 
 export default {
   name: 'home',
